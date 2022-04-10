@@ -2,6 +2,10 @@ package myfirstgrailsproject
 
 class HomeController {
 
-    def index() { }
-    def homepage() { }
+    HomeService homeService
+    def index() {
+        String name = homeService.serviceMethod();
+        render(view: 'index', model: [name: name, age: 23])
+    }
+    // def homepage() { }
 }
