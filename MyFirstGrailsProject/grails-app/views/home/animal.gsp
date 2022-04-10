@@ -13,7 +13,7 @@
 
 <body>
     <g:each in="${animalListKey}" var="animalList">
-        ${animalList}
+        <li>${animalList}</li>
     </g:each>
 </body>
 </html>
