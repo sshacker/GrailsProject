@@ -12,8 +12,10 @@
 </head>
 
 <body>
-    <g:each in="${animalListKey}" var="animalList">
-        <li>${animalList}</li>
-    </g:each>
+    <ol>
+        <g:each in="${animalListKey}" var="animalList">
+            <li>${animalList}</li>
+        </g:each>
+    </ol>
 </body>
 </html>
