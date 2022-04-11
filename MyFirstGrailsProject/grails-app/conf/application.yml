@@ -91,15 +91,25 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
+    #driverClassName: org.h2.Driver
+    driverClassName: com.mysql.jdbc.Driver
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    #username: sa
+    #password: ''
+    username: root
+    password: igdefault
+    showSql: true
 
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            #dbCreate: create-drop
+            dbCreate: update
+            # url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:mysql://localhost/bootcamp_learning?autoReconnect=true&useSSL=false&useUnicode=yes&characterEncoding=UTF-8
+            #dialect: "com.ttn.newers.config.MySQLUTF8InnoDBDialect"
+            #dialect: "com.hibernate.dialect.MySQL57dialect"
+            logSql: true
     test:
         dataSource:
             dbCreate: update
